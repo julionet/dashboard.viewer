@@ -88,5 +88,55 @@ namespace Dashboard.Viewer.Repository
         {
             return "";
         }
+
+        public Usuario SelecionarPorLogin(string login)
+        {
+            return this.SelecionarTodos().Where(p => p.Login == login).FirstOrDefault();
+        }
+
+        public string ValidarLogin(string login, string senha)
+        {
+            if (string.IsNullOrWhiteSpace(login))
+                return "Usuário não informado!";
+            else if (string.IsNullOrWhiteSpace(senha))
+                return "Senha não informada!";
+            else
+            {
+                Usuario user = this.SelecionarPorLogin(login);
+                if ((user == null) || (user.Senha != senha))
+                    return "Usuário ou senha incorretos!";
+                else
+                    return "";
+            }
+        }
+
+        public string AlterarSenha(string usuario, string senhaantiga, string novasenha, string confirmacao)
+        {
+            if (string.IsNullOrWhiteSpace(usuario))
+                return "Usuário não informado!";
+            else if (string.IsNullOrWhiteSpace(senhaantiga))
+                return "Senha antiga não informada!";
+            else if (string.IsNullOrWhiteSpace(novasenha))
+                return "Nova senha não informada!";
+            else if (string.IsNullOrWhiteSpace(confirmacao))
+                return "Confirmação não informada!";
+            else if (novasenha != confirmacao)
+                return "Confirmação não confere com a nova senha!";
+            else
+            {
+                Usuario u = this.SelecionarPorLogin(usuario);
+                if (u == null)
+                    return "Usuário não cadastrado!";
+                else if (u.Senha.ToUpper() != senhaantiga.ToUpper())
+                    return "Senha antiga está incorreta!";
+                else if (u.Senha.ToUpper() == novasenha.ToUpper())
+                    return "Nova senha deve ser diferente da senha antiga!";
+                else
+                {
+                    u.Senha = novasenha;
+                    return this.Alterar(u);
+                }
+            }
+        }
     }
 }

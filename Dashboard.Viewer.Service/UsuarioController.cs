@@ -60,5 +60,15 @@ namespace Dashboard.Viewer.Service
         {
             return new UsuarioRepository().Filtrar(condicao).ToList();
         }
+
+        public string ValidarLogin(string login, string senha)
+        {
+            return new UsuarioRepository().ValidarLogin(login, senha);
+        }
+
+        public string AlterarSenha(string login, string senhaantiga, string novasenha, string confirmacao)
+        {
+            return new UsuarioRepository().AlterarSenha(login, senhaantiga, novasenha, confirmacao);
+        }
     }
 }

@@ -21,8 +21,9 @@ namespace Dashboard.Viewer.WFA
 
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
-            UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");
-            Application.Run(new Form1());
+            UserLookAndFeel.Default.SetSkinStyle("Metropolis");
+
+            Application.Run(new FrmLogin());
         }
     }
 }

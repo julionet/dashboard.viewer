@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dashboard.Viewer.Entity;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration;
@@ -37,5 +38,9 @@ namespace Dashboard.Viewer.Infrastructure
 
             base.OnModelCreating(modelBuilder);
         }
+
+        public DbSet<Categoria> Categorias { get; set; }
+        public DbSet<Entity.Dashboard> Dashboards { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
     }
 }
