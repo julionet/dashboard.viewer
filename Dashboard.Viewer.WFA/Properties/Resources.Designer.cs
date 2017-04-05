@@ -63,6 +63,16 @@ namespace Dashboard.Viewer.WFA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dashboard_icon {
+            get {
+                object obj = ResourceManager.GetObject("dashboard_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dashboard_viewer {
             get {
                 object obj = ResourceManager.GetObject("dashboard-viewer", resourceCulture);
@@ -73,9 +83,49 @@ namespace Dashboard.Viewer.WFA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap minimizar_metro_32 {
+            get {
+                object obj = ResourceManager.GetObject("minimizar_metro_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Sair_Metro {
             get {
                 object obj = ResourceManager.GetObject("Sair_Metro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sair_Metro_32 {
+            get {
+                object obj = ResourceManager.GetObject("Sair_Metro_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TrocarSenha_Metro_32 {
+            get {
+                object obj = ResourceManager.GetObject("TrocarSenha_Metro_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TrocarUsuario_Metro_32 {
+            get {
+                object obj = ResourceManager.GetObject("TrocarUsuario_Metro_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

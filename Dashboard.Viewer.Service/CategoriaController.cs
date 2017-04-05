@@ -60,5 +60,10 @@ namespace Dashboard.Viewer.Service
         {
             return new CategoriaRepository().Filtrar(condicao).ToList();
         }
+
+        public List<Categoria> SelecionarAtivos()
+        {
+            return new CategoriaRepository().SelecionarAtivos().ToList();
+        }
     }
 }

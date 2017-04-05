@@ -36,7 +36,7 @@ namespace Dashboard.Viewer.WFA
                 XtraMessageBox.Show(mensagem, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
-                Global.UsuarioLogado = txtUsuario.Text;
+                Global.UsuarioLogin = txtUsuario.Text;
                 this.DialogResult = DialogResult.OK;
             }
         }

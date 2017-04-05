@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using DevExpress.UserSkins;
 using DevExpress.Skins;
 using DevExpress.LookAndFeel;
+using System.Configuration;
 
 namespace Dashboard.Viewer.WFA
 {
@@ -21,9 +22,16 @@ namespace Dashboard.Viewer.WFA
 
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
-            UserLookAndFeel.Default.SetSkinStyle("Metropolis");
+            UserLookAndFeel.Default.SetSkinStyle(ConfigurationManager.AppSettings["SkinName"].ToString());
 
-            Application.Run(new FrmLogin());
+            if (new FrmLogin().ShowDialog() == DialogResult.OK)
+            {
+                Application.Run(new FrmPrincipal());
+            }
+            else
+            {
+                Application.Exit();
+            }
         }
     }
 }

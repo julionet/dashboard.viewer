@@ -18,6 +18,7 @@ namespace Dashboard.Viewer.Infrastructure
             Property(p => p.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(p => p.Login).HasMaxLength(50).IsRequired();
             Property(p => p.Senha).HasMaxLength(50).IsRequired();
+            Property(p => p.Master).IsRequired();
             Property(p => p.Bloqueado).IsRequired();
             HasMany(p => p.Dashboard).WithMany(p => p.Usuario);
         }

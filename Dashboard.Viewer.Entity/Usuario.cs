@@ -14,6 +14,8 @@ namespace Dashboard.Viewer.Entity
 
         public string Senha { get; set; }
 
+        public bool Master { get; set; }
+
         public bool Bloqueado { get; set; }
 
         public virtual ICollection<Dashboard> Dashboard { get; set; }

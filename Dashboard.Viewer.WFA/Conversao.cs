@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +10,12 @@ namespace Dashboard.Viewer.WFA
 {
     public static class Conversao
     {
+        public static System.IO.MemoryStream StringToStream(string s)
+        {
+            byte[] byteArray = Encoding.GetEncoding("iso-8859-1").GetBytes(s);
+            return new MemoryStream(byteArray);
+        }
+
         public static Color SkinNameToColor(string s)
         {
             Color color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(169)))), ((int)(((byte)(254)))));

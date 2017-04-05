@@ -8,11 +8,11 @@ namespace Dashboard.Viewer.Comunication
 {
     public static class Global
     {
-        private static string _usuariologado;
-        public static string UsuarioLogado
+        private static string _usuariologin;
+        public static string UsuarioLogin
         {
-            get { return _usuariologado; }
-            set { _usuariologado = value; }
+            get { return _usuariologin; }
+            set { _usuariologin = value; }
         }
     }
 }

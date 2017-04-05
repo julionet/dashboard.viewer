@@ -1,4 +1,5 @@
-﻿using Dashboard.Viewer.Infrastructure;
+﻿using Dashboard.Viewer.Entity;
+using Dashboard.Viewer.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -86,6 +87,18 @@ namespace Dashboard.Viewer.Repository
         public string ValidarExclusao(Entity.Dashboard entity)
         {
             return "";
+        }
+
+        public IQueryable<Entity.Dashboard> SelecionarPorCategoriaUsuario(int categoria, string usuario)
+        {
+            Usuario user = new UsuarioRepository().SelecionarPorLogin(usuario);
+            if (user.Master)
+                return this.SelecionarTodos().Where(p => p.CategoriaId == categoria && p.Ativo);
+            else
+                return (from d in _db.Dashboards
+                        from u in d.Usuario
+                        where u.Id == user.Id && d.CategoriaId == categoria && d.Ativo
+                        select d);
         }
     }
 }

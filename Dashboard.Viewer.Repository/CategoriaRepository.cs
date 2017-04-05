@@ -88,5 +88,10 @@ namespace Dashboard.Viewer.Repository
         {
             return "";
         }
+
+        public IQueryable<Categoria> SelecionarAtivos()
+        {
+            return this.SelecionarTodos().Where(p => p.Ativo);
+        }
     }
 }

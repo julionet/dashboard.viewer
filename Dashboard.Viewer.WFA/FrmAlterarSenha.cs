@@ -14,7 +14,7 @@ namespace Dashboard.Viewer.WFA
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            var mensagem = Servicos.usuarioServico.AlterarSenha(Global.UsuarioLogado, Security.GetSHA1(txtSenhaAntiga.Text),
+            var mensagem = Servicos.usuarioServico.AlterarSenha(Global.UsuarioLogin, Security.GetSHA1(txtSenhaAntiga.Text),
                 Security.GetSHA1(txtNovaSenha.Text), Security.GetSHA1(txtConfirmacao.Text));
             if (mensagem != "")
             {
@@ -29,7 +29,7 @@ namespace Dashboard.Viewer.WFA
 
         private void FrmAlterarSenha_Load(object sender, EventArgs e)
         {
-            txtUsuario.Text = Global.UsuarioLogado;
+            txtUsuario.Text = Global.UsuarioLogin;
             txtSenhaAntiga.Focus();
             txtSenhaAntiga.Select();
         }

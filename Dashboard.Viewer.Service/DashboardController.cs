@@ -59,5 +59,10 @@ namespace Dashboard.Viewer.Service
         {
             return new DashboardRepository().Filtrar(condicao).ToList();
         }
+
+        public List<Entity.Dashboard> SelecionarPorCategoriaUsuario(int categoria, string usuario)
+        {
+            return new DashboardRepository().SelecionarPorCategoriaUsuario(categoria, usuario).ToList();
+        }
     }
 }
