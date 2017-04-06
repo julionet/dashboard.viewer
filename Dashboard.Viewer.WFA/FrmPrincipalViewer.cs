@@ -17,9 +17,9 @@ using DevExpress.XtraTab.ViewInfo;
 
 namespace Dashboard.Viewer.WFA
 {
-    public partial class FrmPrincipal : XtraForm
+    public partial class FrmPrincipalViewer : XtraForm
     {
-        private bool bForcarSaida = false;
+        private bool _forcarsaida = false;
 
         private void CreateGroups()
         {
@@ -104,7 +104,7 @@ namespace Dashboard.Viewer.WFA
             navBarControl.OptionsNavPane.NavPaneState = NavPaneState.Expanded;
         }
 
-        public FrmPrincipal()
+        public FrmPrincipalViewer()
         {
             InitializeComponent();
 
@@ -128,13 +128,13 @@ namespace Dashboard.Viewer.WFA
 
         private void navButtonTrocarUsuario_ElementClick(object sender, NavElementEventArgs e)
         {
-            bForcarSaida = true;
+            _forcarsaida = true;
             if (new FrmLogin().ShowDialog() == DialogResult.OK)
             {
                 navBarControl.Groups.Clear();
                 xtraTabControl.TabPages.Clear();
                 this.CreateGroups();
-                bForcarSaida = false;
+                _forcarsaida = false;
             }
             else
                 this.Close();
@@ -144,7 +144,7 @@ namespace Dashboard.Viewer.WFA
         {
             base.OnClosing(e);
 
-            if (bForcarSaida)
+            if (_forcarsaida)
                 e.Cancel = false;
             else
             {

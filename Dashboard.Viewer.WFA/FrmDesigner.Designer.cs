@@ -1,6 +1,6 @@
-﻿namespace Dashboard.Designer.WFA
+﻿namespace Dashboard.Viewer.WFA
 {
-    partial class FrmPrincipal
+    partial class FrmDesigner
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDesigner));
             DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup69 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
             DevExpress.XtraBars.Ribbon.GalleryItem galleryItem189 = new DevExpress.XtraBars.Ribbon.GalleryItem();
             DevExpress.XtraBars.Ribbon.GalleryItem galleryItem190 = new DevExpress.XtraBars.Ribbon.GalleryItem();

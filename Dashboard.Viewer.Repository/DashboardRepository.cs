@@ -1,4 +1,5 @@
-﻿using Dashboard.Viewer.Entity;
+﻿using Dashboard.Viewer.Dto;
+using Dashboard.Viewer.Entity;
 using Dashboard.Viewer.Infrastructure;
 using System;
 using System.Collections.Generic;
@@ -81,12 +82,47 @@ namespace Dashboard.Viewer.Repository
 
         public string ValidarDados(Entity.Dashboard entity)
         {
+            if (string.IsNullOrWhiteSpace(entity.Descricao))
+                return "Descrição não informada!";
+            else if (entity.CategoriaId == 0)
+                return "Categoria não informada!";
+            else if (string.IsNullOrWhiteSpace(entity.Xml))
+                return "Xml não informado!";
             return "";
         }
 
         public string ValidarExclusao(Entity.Dashboard entity)
         {
             return "";
+        }
+
+        public IQueryable<DashboardDto> SelecionarTodosDTO()
+        {
+            return (from q in _db.Dashboards
+                    select new DashboardDto
+                    {
+                        Ativo = q.Ativo,
+                        CategoriaDescricao = q.Categoria.Descricao,
+                        CategoriaId = q.CategoriaId,
+                        Descricao = q.Descricao,
+                        Id = q.Id,
+                        Xml = q.Xml
+                    });
+        }
+
+        public IQueryable<DashboardDto> FiltrarDTO(string condicao)
+        {
+            return this.SelecionarTodosDTO();
+        }
+
+        public IQueryable<Entity.Dashboard> SelecionarAtivos()
+        {
+            return this.SelecionarTodos().Where(p => p.Ativo);
+        }
+
+        public IQueryable<Entity.Dashboard> SelecionarPorUsuario(int usuario)
+        {
+            return (from d in _db.Dashboards from u in d.Usuario where u.Id == usuario select d);
         }
 
         public IQueryable<Entity.Dashboard> SelecionarPorCategoriaUsuario(int categoria, string usuario)

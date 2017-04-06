@@ -1,18 +1,18 @@
-﻿using DevExpress.XtraBars.Ribbon;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Dashboard.Designer.WFA
+namespace Dashboard.Viewer.WFA
 {
-    public partial class FrmPrincipal : RibbonForm
+    public partial class FrmDashboard : FrmManutencao
     {
-        public FrmPrincipal()
+        public FrmDashboard()
         {
             InitializeComponent();
         }

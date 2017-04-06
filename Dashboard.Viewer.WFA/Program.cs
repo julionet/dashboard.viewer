@@ -22,15 +22,21 @@ namespace Dashboard.Viewer.WFA
 
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
-            UserLookAndFeel.Default.SetSkinStyle(ConfigurationManager.AppSettings["SkinName"].ToString());
+            UserLookAndFeel.Default.SetSkinStyle(ConfigurationManager.AppSettings["skinName"].ToString());
 
-            if (new FrmLogin().ShowDialog() == DialogResult.OK)
+            using (FrmLogin form = new FrmLogin())
             {
-                Application.Run(new FrmPrincipal());
-            }
-            else
-            {
-                Application.Exit();
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    if (form.Modulo.Equals("V"))
+                        Application.Run(new FrmPrincipalViewer());
+                    else
+                        Application.Run(new FrmPrinicpalDesigner());
+                }
+                else
+                {
+                    Application.Exit();
+                }
             }
         }
     }

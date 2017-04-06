@@ -21,6 +21,7 @@ namespace Dashboard.Viewer.Infrastructure
             Property(p => p.Master).IsRequired();
             Property(p => p.Bloqueado).IsRequired();
             HasMany(p => p.Dashboard).WithMany(p => p.Usuario);
+            Ignore(p => p.ListaDashboard);
         }
     }
 }

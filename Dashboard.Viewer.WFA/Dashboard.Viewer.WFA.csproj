@@ -46,7 +46,10 @@
     <Reference Include="DevExpress.XtraCharts.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraCharts.v15.1.Wizard, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v15.1" />
+    <Reference Include="DevExpress.XtraGrid.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraNavBar.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -77,6 +80,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ButtonsPanel.cs" />
+    <Compile Include="ComponenteDX.cs" />
     <Compile Include="Conversao.cs" />
     <Compile Include="FrmAlterarSenha.cs">
       <SubType>Form</SubType>
@@ -84,11 +89,35 @@
     <Compile Include="FrmAlterarSenha.designer.cs">
       <DependentUpon>FrmAlterarSenha.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCategoria.Designer.cs">
+      <DependentUpon>FrmCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDashboard.Designer.cs">
+      <DependentUpon>FrmDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDesigner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDesigner.Designer.cs">
+      <DependentUpon>FrmDesigner.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmManutencao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmManutencao.designer.cs">
+      <DependentUpon>FrmManutencao.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmModelo.cs">
       <SubType>Form</SubType>
@@ -96,11 +125,23 @@
     <Compile Include="FrmModelo.designer.cs">
       <DependentUpon>FrmModelo.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmPrincipal.cs">
+    <Compile Include="FrmPrincipalViewer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmPrincipal.designer.cs">
-      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    <Compile Include="FrmPrincipalViewer.designer.cs">
+      <DependentUpon>FrmPrincipalViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPrinicpalDesigner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPrinicpalDesigner.Designer.cs">
+      <DependentUpon>FrmPrinicpalDesigner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUsuario.Designer.cs">
+      <DependentUpon>FrmUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmViewer.cs">
       <SubType>Form</SubType>
@@ -108,20 +149,55 @@
     <Compile Include="FrmViewer.Designer.cs">
       <DependentUpon>FrmViewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Funcoes.cs" />
+    <Compile Include="GridViewWithButtons.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Interface.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security.cs" />
+    <Compile Include="SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreen.designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WaitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaitForm.designer.cs">
+      <DependentUpon>WaitForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FrmAlterarSenha.resx">
       <DependentUpon>FrmAlterarSenha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCategoria.resx">
+      <DependentUpon>FrmCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDashboard.resx">
+      <DependentUpon>FrmDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDesigner.resx">
+      <DependentUpon>FrmDesigner.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmManutencao.resx">
+      <DependentUpon>FrmManutencao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmModelo.resx">
       <DependentUpon>FrmModelo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmPrincipal.resx">
-      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    <EmbeddedResource Include="FrmPrincipalViewer.resx">
+      <DependentUpon>FrmPrincipalViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPrinicpalDesigner.resx">
+      <DependentUpon>FrmPrinicpalDesigner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUsuario.resx">
+      <DependentUpon>FrmUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmViewer.resx">
       <DependentUpon>FrmViewer.cs</DependentUpon>
@@ -137,8 +213,16 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaitForm.resx">
+      <DependentUpon>WaitForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Dashboard.Viewer.Entity.Categoria.datasource" />
+    <None Include="Properties\DataSources\Dashboard.Viewer.Entity.Usuario.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

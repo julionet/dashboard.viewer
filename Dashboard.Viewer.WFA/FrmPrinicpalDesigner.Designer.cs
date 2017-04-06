@@ -1,6 +1,6 @@
 ﻿namespace Dashboard.Viewer.WFA
 {
-    partial class FrmPrincipal
+    partial class FrmPrinicpalDesigner
     {
         /// <summary>
         /// Required designer variable.
@@ -28,26 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
             this.tileNavPane = new DevExpress.XtraBars.Navigation.TileNavPane();
             this.navButtonTitulo = new DevExpress.XtraBars.Navigation.NavButton();
-            this.navButtonTrocarUsuario = new DevExpress.XtraBars.Navigation.NavButton();
             this.navButtonAlterarSenha = new DevExpress.XtraBars.Navigation.NavButton();
             this.navButtonMinimizar = new DevExpress.XtraBars.Navigation.NavButton();
             this.navButtonFechar = new DevExpress.XtraBars.Navigation.NavButton();
-            this.panelControlBackground = new DevExpress.XtraEditors.PanelControl();
+            this.tileBar1 = new DevExpress.XtraBars.Navigation.TileBar();
+            this.tileBarGroup2 = new DevExpress.XtraBars.Navigation.TileBarGroup();
+            this.tileBarItemUsuarios = new DevExpress.XtraBars.Navigation.TileBarItem();
+            this.tileBarItemCategorias = new DevExpress.XtraBars.Navigation.TileBarItem();
+            this.tileBarItemDesigner = new DevExpress.XtraBars.Navigation.TileBarItem();
             this.xtraTabControl = new DevExpress.XtraTab.XtraTabControl();
-            this.navBarControl = new DevExpress.XtraNavBar.NavBarControl();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControlBackground)).BeginInit();
-            this.panelControlBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.navBarControl)).BeginInit();
             this.SuspendLayout();
             // 
             // tileNavPane
             // 
+            this.tileNavPane.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tileNavPane.Appearance.Options.UseFont = true;
+            this.tileNavPane.AppearanceHovered.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tileNavPane.AppearanceHovered.Options.UseFont = true;
+            this.tileNavPane.AppearanceSelected.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tileNavPane.AppearanceSelected.Options.UseFont = true;
             this.tileNavPane.ButtonPadding = new System.Windows.Forms.Padding(8);
             this.tileNavPane.Buttons.Add(this.navButtonTitulo);
-            this.tileNavPane.Buttons.Add(this.navButtonTrocarUsuario);
             this.tileNavPane.Buttons.Add(this.navButtonAlterarSenha);
             this.tileNavPane.Buttons.Add(this.navButtonMinimizar);
             this.tileNavPane.Buttons.Add(this.navButtonFechar);
@@ -67,8 +74,8 @@
             this.tileNavPane.Name = "tileNavPane";
             this.tileNavPane.OptionsPrimaryDropDown.BackColor = System.Drawing.Color.Empty;
             this.tileNavPane.OptionsSecondaryDropDown.BackColor = System.Drawing.Color.Empty;
-            this.tileNavPane.Size = new System.Drawing.Size(938, 40);
-            this.tileNavPane.TabIndex = 0;
+            this.tileNavPane.Size = new System.Drawing.Size(815, 40);
+            this.tileNavPane.TabIndex = 1;
             this.tileNavPane.Text = "tileNavPane1";
             // 
             // navButtonTitulo
@@ -76,18 +83,10 @@
             this.navButtonTitulo.Alignment = DevExpress.XtraBars.Navigation.NavButtonAlignment.Left;
             this.navButtonTitulo.Appearance.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.navButtonTitulo.Appearance.Options.UseFont = true;
-            this.navButtonTitulo.Caption = "Dashboard Viewer";
+            this.navButtonTitulo.Caption = "Dashboard Designer";
             this.navButtonTitulo.Enabled = false;
             this.navButtonTitulo.Glyph = global::Dashboard.Viewer.WFA.Properties.Resources.dashboard_icon;
             this.navButtonTitulo.Name = "navButtonTitulo";
-            // 
-            // navButtonTrocarUsuario
-            // 
-            this.navButtonTrocarUsuario.Alignment = DevExpress.XtraBars.Navigation.NavButtonAlignment.Right;
-            this.navButtonTrocarUsuario.Caption = "Trocar Usuário";
-            this.navButtonTrocarUsuario.Glyph = global::Dashboard.Viewer.WFA.Properties.Resources.TrocarUsuario_Metro_32;
-            this.navButtonTrocarUsuario.Name = "navButtonTrocarUsuario";
-            this.navButtonTrocarUsuario.ElementClick += new DevExpress.XtraBars.Navigation.NavElementClickEventHandler(this.navButtonTrocarUsuario_ElementClick);
             // 
             // navButtonAlterarSenha
             // 
@@ -113,62 +112,87 @@
             this.navButtonFechar.Name = "navButtonFechar";
             this.navButtonFechar.ElementClick += new DevExpress.XtraBars.Navigation.NavElementClickEventHandler(this.navButtonFechar_ElementClick);
             // 
-            // panelControlBackground
+            // tileBar1
             // 
-            this.panelControlBackground.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControlBackground.Controls.Add(this.xtraTabControl);
-            this.panelControlBackground.Controls.Add(this.navBarControl);
-            this.panelControlBackground.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControlBackground.Location = new System.Drawing.Point(0, 40);
-            this.panelControlBackground.Name = "panelControlBackground";
-            this.panelControlBackground.Size = new System.Drawing.Size(938, 512);
-            this.panelControlBackground.TabIndex = 1;
+            this.tileBar1.AllowDrag = false;
+            this.tileBar1.AppearanceItem.Normal.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tileBar1.AppearanceItem.Normal.Options.UseFont = true;
+            this.tileBar1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tileBar1.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
+            this.tileBar1.Groups.Add(this.tileBarGroup2);
+            this.tileBar1.ItemSize = 56;
+            this.tileBar1.Location = new System.Drawing.Point(0, 40);
+            this.tileBar1.MaxId = 3;
+            this.tileBar1.Name = "tileBar1";
+            this.tileBar1.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.ScrollButtons;
+            this.tileBar1.Size = new System.Drawing.Size(815, 98);
+            this.tileBar1.TabIndex = 2;
+            this.tileBar1.Text = "tileBar1";
+            this.tileBar1.WideTileWidth = 150;
+            // 
+            // tileBarGroup2
+            // 
+            this.tileBarGroup2.Items.Add(this.tileBarItemUsuarios);
+            this.tileBarGroup2.Items.Add(this.tileBarItemCategorias);
+            this.tileBarGroup2.Items.Add(this.tileBarItemDesigner);
+            this.tileBarGroup2.Name = "tileBarGroup2";
+            // 
+            // tileBarItemUsuarios
+            // 
+            this.tileBarItemUsuarios.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
+            tileItemElement1.Text = "Usuários";
+            this.tileBarItemUsuarios.Elements.Add(tileItemElement1);
+            this.tileBarItemUsuarios.Id = 0;
+            this.tileBarItemUsuarios.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
+            this.tileBarItemUsuarios.Name = "tileBarItemUsuarios";
+            this.tileBarItemUsuarios.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileBarItemUsuarios_ItemClick);
+            // 
+            // tileBarItemCategorias
+            // 
+            this.tileBarItemCategorias.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
+            tileItemElement2.Text = "Categorias";
+            this.tileBarItemCategorias.Elements.Add(tileItemElement2);
+            this.tileBarItemCategorias.Id = 1;
+            this.tileBarItemCategorias.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
+            this.tileBarItemCategorias.Name = "tileBarItemCategorias";
+            this.tileBarItemCategorias.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileBarItemCategorias_ItemClick);
+            // 
+            // tileBarItemDesigner
+            // 
+            this.tileBarItemDesigner.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
+            tileItemElement3.Text = "Dashboards";
+            this.tileBarItemDesigner.Elements.Add(tileItemElement3);
+            this.tileBarItemDesigner.Id = 2;
+            this.tileBarItemDesigner.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
+            this.tileBarItemDesigner.Name = "tileBarItemDesigner";
+            this.tileBarItemDesigner.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileBarItemDesigner_ItemClick);
             // 
             // xtraTabControl
             // 
             this.xtraTabControl.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InActiveTabPageHeaderAndOnMouseHover;
-            this.xtraTabControl.HeaderButtons = ((DevExpress.XtraTab.TabButtons)((((DevExpress.XtraTab.TabButtons.Prev | DevExpress.XtraTab.TabButtons.Next)
-            | DevExpress.XtraTab.TabButtons.Close)
+            this.xtraTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.xtraTabControl.HeaderButtons = ((DevExpress.XtraTab.TabButtons)((((DevExpress.XtraTab.TabButtons.Prev | DevExpress.XtraTab.TabButtons.Next) 
+            | DevExpress.XtraTab.TabButtons.Close) 
             | DevExpress.XtraTab.TabButtons.Default)));
             this.xtraTabControl.HeaderButtonsShowMode = DevExpress.XtraTab.TabButtonShowMode.WhenNeeded;
-            this.xtraTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControl.Location = new System.Drawing.Point(204, 0);
+            this.xtraTabControl.Location = new System.Drawing.Point(0, 138);
             this.xtraTabControl.Name = "xtraTabControl";
-            this.xtraTabControl.Size = new System.Drawing.Size(734, 512);
-            this.xtraTabControl.TabIndex = 2;
-            this.xtraTabControl.CloseButtonClick += new System.EventHandler(this.xtraTabControl_CloseButtonClick);
+            this.xtraTabControl.Size = new System.Drawing.Size(815, 392);
+            this.xtraTabControl.TabIndex = 4;
             // 
-            // navBarControl
-            // 
-            this.navBarControl.ActiveGroup = null;
-            this.navBarControl.Dock = System.Windows.Forms.DockStyle.Left;
-            this.navBarControl.DragDropFlags = DevExpress.XtraNavBar.NavBarDragDrop.None;
-            this.navBarControl.Location = new System.Drawing.Point(0, 0);
-            this.navBarControl.Name = "navBarControl";
-            this.navBarControl.NavigationPaneOverflowPanelUseSmallImages = false;
-            this.navBarControl.OptionsNavPane.ExpandedWidth = 204;
-            this.navBarControl.OptionsNavPane.ShowOverflowButton = false;
-            this.navBarControl.OptionsNavPane.ShowOverflowPanel = false;
-            this.navBarControl.OptionsNavPane.ShowSplitter = false;
-            this.navBarControl.PaintStyleKind = DevExpress.XtraNavBar.NavBarViewKind.NavigationPane;
-            this.navBarControl.Size = new System.Drawing.Size(204, 512);
-            this.navBarControl.TabIndex = 1;
-            // 
-            // FrmPrincipal
+            // FrmPrinicpalDesigner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(938, 552);
-            this.Controls.Add(this.panelControlBackground);
+            this.ClientSize = new System.Drawing.Size(815, 530);
+            this.Controls.Add(this.xtraTabControl);
+            this.Controls.Add(this.tileBar1);
             this.Controls.Add(this.tileNavPane);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmPrincipal";
-            this.Text = "Dashboard Viewer";
-            this.Load += new System.EventHandler(this.FrmPrincipal_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControlBackground)).EndInit();
-            this.panelControlBackground.ResumeLayout(false);
+            this.Name = "FrmPrinicpalDesigner";
+            this.Text = "Dashboard Designer";
+            this.Load += new System.EventHandler(this.FrmPrinicpal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.navBarControl)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -177,12 +201,14 @@
 
         private DevExpress.XtraBars.Navigation.TileNavPane tileNavPane;
         private DevExpress.XtraBars.Navigation.NavButton navButtonTitulo;
-        private DevExpress.XtraBars.Navigation.NavButton navButtonTrocarUsuario;
+        private DevExpress.XtraBars.Navigation.NavButton navButtonAlterarSenha;
         private DevExpress.XtraBars.Navigation.NavButton navButtonMinimizar;
         private DevExpress.XtraBars.Navigation.NavButton navButtonFechar;
-        private DevExpress.XtraBars.Navigation.NavButton navButtonAlterarSenha;
-        private DevExpress.XtraEditors.PanelControl panelControlBackground;
-        private DevExpress.XtraNavBar.NavBarControl navBarControl;
+        private DevExpress.XtraBars.Navigation.TileBar tileBar1;
+        private DevExpress.XtraBars.Navigation.TileBarGroup tileBarGroup2;
+        private DevExpress.XtraBars.Navigation.TileBarItem tileBarItemUsuarios;
+        private DevExpress.XtraBars.Navigation.TileBarItem tileBarItemCategorias;
+        private DevExpress.XtraBars.Navigation.TileBarItem tileBarItemDesigner;
         private DevExpress.XtraTab.XtraTabControl xtraTabControl;
     }
 }

@@ -81,12 +81,18 @@ namespace Dashboard.Viewer.Repository
 
         public string ValidarDados(Categoria entity)
         {
-            return "";
+            if (string.IsNullOrWhiteSpace(entity.Descricao))
+                return "Descrição não informada!";
+            else
+                return "";
         }
 
         public string ValidarExclusao(Categoria entity)
         {
-            return "";
+            if ((from q in _db.Dashboards where q.CategoriaId == entity.Id select q).Count() != 0)
+                return "Não é permitido excluir uma categoria associada a um ou mais dashboards!"
+            else
+                return "";
         }
 
         public IQueryable<Categoria> SelecionarAtivos()

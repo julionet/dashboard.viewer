@@ -1,4 +1,5 @@
-﻿using Dashboard.Viewer.Infrastructure;
+﻿using Dashboard.Viewer.Dto;
+using Dashboard.Viewer.Infrastructure;
 using Dashboard.Viewer.Repository;
 using System;
 using System.Collections.Generic;
@@ -50,19 +51,29 @@ namespace Dashboard.Viewer.Service
             return new DashboardRepository().Selecionar(id);
         }
 
-        public List<Entity.Dashboard> SelecionarTodos()
+        public List<DashboardDto> SelecionarTodos()
         {
-            return new DashboardRepository().SelecionarTodos().ToList();
+            return new DashboardRepository().SelecionarTodosDTO().ToList();
         }
 
-        public List<Entity.Dashboard> Filtrar(string condicao)
+        public List<DashboardDto> Filtrar(string condicao)
         {
-            return new DashboardRepository().Filtrar(condicao).ToList();
+            return new DashboardRepository().FiltrarDTO(condicao).ToList();
         }
 
         public List<Entity.Dashboard> SelecionarPorCategoriaUsuario(int categoria, string usuario)
         {
             return new DashboardRepository().SelecionarPorCategoriaUsuario(categoria, usuario).ToList();
+        }
+
+        public List<Entity.Dashboard> SelecionarAtivos()
+        {
+            return new DashboardRepository().SelecionarAtivos().ToList();
+        }
+
+        public List<Entity.Dashboard> SelecionarPorUsuario(int usuario)
+        {
+            return new DashboardRepository().SelecionarPorUsuario(usuario).ToList();
         }
     }
 }

@@ -55,6 +55,10 @@
     <Compile Include="UsuarioController.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Dashboard.Viewer.Dto\Dashboard.Viewer.Dto.csproj">
+      <Project>{AF612460-7E66-422A-8DD9-664D4BA2265B}</Project>
+      <Name>Dashboard.Viewer.Dto</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Dashboard.Viewer.Entity\Dashboard.Viewer.Entity.csproj">
       <Project>{C2AF018E-E046-4D36-A9E0-C212F5ACC289}</Project>
       <Name>Dashboard.Viewer.Entity</Name>

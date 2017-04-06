@@ -39,7 +39,10 @@ namespace Dashboard.Viewer.Repository
             string mensagem = this.ValidarDados(entity);
             if (mensagem == "")
             {
-                mensagem = _repository.Insert(entity);
+                mensagem = _repository.JoinEntity<Entity.Dashboard>(entity.Dashboard, entity.ListaDashboard);
+
+                if (mensagem == "")
+                    mensagem = _repository.Insert(entity);
             }
             return mensagem;
         }
@@ -49,7 +52,10 @@ namespace Dashboard.Viewer.Repository
             string mensagem = this.ValidarDados(entity);
             if (mensagem == "")
             {
-                mensagem = _repository.Update(entity);
+                mensagem = _repository.JoinEntity<Entity.Dashboard>(entity.Dashboard, entity.ListaDashboard);
+
+                if (mensagem == "")
+                    mensagem = _repository.Update(entity);
             }
             return mensagem;
         }
@@ -81,6 +87,10 @@ namespace Dashboard.Viewer.Repository
 
         public string ValidarDados(Usuario entity)
         {
+            if (string.IsNullOrWhiteSpace(entity.Login))
+                return "Login não informado!";
+            else if (string.IsNullOrWhiteSpace(entity.Senha))
+                return "Senha não informada!";
             return "";
         }
 

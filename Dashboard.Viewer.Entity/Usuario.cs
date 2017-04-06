@@ -20,6 +20,8 @@ namespace Dashboard.Viewer.Entity
 
         public virtual ICollection<Dashboard> Dashboard { get; set; }
 
+        public string ListaDashboard { get; set; }
+
         public Usuario()
         {
             this.Dashboard = new HashSet<Dashboard>();

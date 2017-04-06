@@ -31,27 +31,30 @@
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.lblFechar = new DevExpress.XtraEditors.LabelControl();
-            this.pcbFechar = new System.Windows.Forms.PictureBox();
             this.lblCopyright = new System.Windows.Forms.Label();
             this.pclLogin = new DevExpress.XtraEditors.PanelControl();
+            this.labelControlModulo = new DevExpress.XtraEditors.LabelControl();
+            this.radioGroupModulo = new DevExpress.XtraEditors.RadioGroup();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.lblConfiguracao = new DevExpress.XtraEditors.LabelControl();
             this.btnIniciar = new DevExpress.XtraEditors.SimpleButton();
-            this.pbxLogotipo = new System.Windows.Forms.PictureBox();
             this.txtUsuario = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtSenha = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.pbxLogotipo = new System.Windows.Forms.PictureBox();
+            this.pcbFechar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbFechar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pclLogin)).BeginInit();
             this.pclLogin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxLogotipo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radioGroupModulo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsuario.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSenha.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLogotipo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbFechar)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -91,19 +94,6 @@
             this.lblFechar.TabIndex = 1;
             this.lblFechar.Text = "Fechar";
             // 
-            // pcbFechar
-            // 
-            this.pcbFechar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pcbFechar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pcbFechar.Image = global::Dashboard.Viewer.WFA.Properties.Resources.Sair_Metro;
-            this.pcbFechar.Location = new System.Drawing.Point(0, 0);
-            this.pcbFechar.Name = "pcbFechar";
-            this.pcbFechar.Size = new System.Drawing.Size(43, 42);
-            this.pcbFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pcbFechar.TabIndex = 0;
-            this.pcbFechar.TabStop = false;
-            this.pcbFechar.Click += new System.EventHandler(this.pcbFechar_Click);
-            // 
             // lblCopyright
             // 
             this.lblCopyright.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -113,7 +103,7 @@
             this.lblCopyright.Name = "lblCopyright";
             this.lblCopyright.Size = new System.Drawing.Size(762, 40);
             this.lblCopyright.TabIndex = 14;
-            this.lblCopyright.Text = "Copyright © CartSys Software";
+            this.lblCopyright.Text = "Copyright ©";
             this.lblCopyright.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pclLogin
@@ -122,6 +112,8 @@
             this.pclLogin.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pclLogin.Appearance.Options.UseBackColor = true;
             this.pclLogin.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.pclLogin.Controls.Add(this.labelControlModulo);
+            this.pclLogin.Controls.Add(this.radioGroupModulo);
             this.pclLogin.Controls.Add(this.labelControl3);
             this.pclLogin.Controls.Add(this.lblConfiguracao);
             this.pclLogin.Controls.Add(this.btnIniciar);
@@ -130,33 +122,107 @@
             this.pclLogin.Controls.Add(this.labelControl1);
             this.pclLogin.Controls.Add(this.labelControl2);
             this.pclLogin.Controls.Add(this.txtSenha);
-            this.pclLogin.Location = new System.Drawing.Point(215, 102);
+            this.pclLogin.Location = new System.Drawing.Point(216, 87);
             this.pclLogin.Name = "pclLogin";
-            this.pclLogin.Size = new System.Drawing.Size(345, 387);
-            this.pclLogin.TabIndex = 15;
+            this.pclLogin.Size = new System.Drawing.Size(345, 432);
+            this.pclLogin.TabIndex = 0;
+            // 
+            // labelControlModulo
+            // 
+            this.labelControlModulo.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControlModulo.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControlModulo.Location = new System.Drawing.Point(9, 319);
+            this.labelControlModulo.Name = "labelControlModulo";
+            this.labelControlModulo.Size = new System.Drawing.Size(41, 13);
+            this.labelControlModulo.TabIndex = 16;
+            this.labelControlModulo.Text = "Módulo";
+            // 
+            // radioGroupModulo
+            // 
+            this.radioGroupModulo.Location = new System.Drawing.Point(9, 338);
+            this.radioGroupModulo.Name = "radioGroupModulo";
+            this.radioGroupModulo.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioGroupModulo.Properties.Appearance.Options.UseFont = true;
+            this.radioGroupModulo.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem("V", "Viewer"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem("D", "Designer")});
+            this.radioGroupModulo.Size = new System.Drawing.Size(329, 23);
+            this.radioGroupModulo.TabIndex = 2;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl3.Location = new System.Drawing.Point(9, 181);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(329, 22);
+            this.labelControl3.TabIndex = 14;
+            this.labelControl3.Text = "Dashboard";
             // 
             // lblConfiguracao
             // 
             this.lblConfiguracao.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblConfiguracao.Appearance.ForeColor = System.Drawing.Color.White;
             this.lblConfiguracao.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblConfiguracao.Location = new System.Drawing.Point(9, 359);
+            this.lblConfiguracao.Location = new System.Drawing.Point(9, 401);
             this.lblConfiguracao.Name = "lblConfiguracao";
             this.lblConfiguracao.Size = new System.Drawing.Size(174, 13);
             this.lblConfiguracao.TabIndex = 13;
             this.lblConfiguracao.Text = "Configuração do Banco de Dados";
-            this.lblConfiguracao.Visible = false;
             // 
             // btnIniciar
             // 
             this.btnIniciar.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIniciar.Appearance.Options.UseFont = true;
-            this.btnIniciar.Location = new System.Drawing.Point(260, 348);
+            this.btnIniciar.Location = new System.Drawing.Point(260, 396);
             this.btnIniciar.Name = "btnIniciar";
             this.btnIniciar.Size = new System.Drawing.Size(78, 24);
             this.btnIniciar.TabIndex = 3;
             this.btnIniciar.Text = "&Iniciar";
             this.btnIniciar.Click += new System.EventHandler(this.btnIniciar_Click);
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.Location = new System.Drawing.Point(9, 248);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsuario.Properties.Appearance.Options.UseFont = true;
+            this.txtUsuario.Properties.MaxLength = 20;
+            this.txtUsuario.Size = new System.Drawing.Size(329, 20);
+            this.txtUsuario.TabIndex = 0;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl1.Location = new System.Drawing.Point(9, 229);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(40, 13);
+            this.labelControl1.TabIndex = 2;
+            this.labelControl1.Text = "Usuário";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl2.Location = new System.Drawing.Point(9, 274);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(32, 13);
+            this.labelControl2.TabIndex = 3;
+            this.labelControl2.Text = "Senha";
+            // 
+            // txtSenha
+            // 
+            this.txtSenha.Location = new System.Drawing.Point(9, 293);
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSenha.Properties.Appearance.Options.UseFont = true;
+            this.txtSenha.Properties.MaxLength = 10;
+            this.txtSenha.Properties.PasswordChar = '*';
+            this.txtSenha.Size = new System.Drawing.Size(329, 20);
+            this.txtSenha.TabIndex = 1;
             // 
             // pbxLogotipo
             // 
@@ -171,58 +237,18 @@
             this.pbxLogotipo.TabIndex = 6;
             this.pbxLogotipo.TabStop = false;
             // 
-            // txtUsuario
+            // pcbFechar
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(9, 260);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.Properties.Appearance.Options.UseFont = true;
-            this.txtUsuario.Properties.MaxLength = 20;
-            this.txtUsuario.Size = new System.Drawing.Size(329, 20);
-            this.txtUsuario.TabIndex = 0;
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl1.Location = new System.Drawing.Point(9, 241);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(40, 13);
-            this.labelControl1.TabIndex = 2;
-            this.labelControl1.Text = "Usuário";
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl2.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl2.Location = new System.Drawing.Point(9, 286);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(32, 13);
-            this.labelControl2.TabIndex = 3;
-            this.labelControl2.Text = "Senha";
-            // 
-            // txtSenha
-            // 
-            this.txtSenha.Location = new System.Drawing.Point(9, 305);
-            this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenha.Properties.Appearance.Options.UseFont = true;
-            this.txtSenha.Properties.MaxLength = 10;
-            this.txtSenha.Properties.PasswordChar = '*';
-            this.txtSenha.Size = new System.Drawing.Size(329, 20);
-            this.txtSenha.TabIndex = 1;
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl3.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl3.Location = new System.Drawing.Point(9, 181);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(329, 22);
-            this.labelControl3.TabIndex = 14;
-            this.labelControl3.Text = "Dashboard Viewer";
+            this.pcbFechar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pcbFechar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pcbFechar.Image = global::Dashboard.Viewer.WFA.Properties.Resources.Sair_Metro;
+            this.pcbFechar.Location = new System.Drawing.Point(0, 0);
+            this.pcbFechar.Name = "pcbFechar";
+            this.pcbFechar.Size = new System.Drawing.Size(43, 42);
+            this.pcbFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pcbFechar.TabIndex = 0;
+            this.pcbFechar.TabStop = false;
+            this.pcbFechar.Click += new System.EventHandler(this.pcbFechar_Click);
             // 
             // FrmLogin
             // 
@@ -243,13 +269,14 @@
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pcbFechar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pclLogin)).EndInit();
             this.pclLogin.ResumeLayout(false);
             this.pclLogin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxLogotipo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radioGroupModulo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsuario.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSenha.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLogotipo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbFechar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -270,5 +297,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.TextEdit txtSenha;
         private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.RadioGroup radioGroupModulo;
+        private DevExpress.XtraEditors.LabelControl labelControlModulo;
     }
 }

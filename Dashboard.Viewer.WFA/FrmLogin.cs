@@ -9,11 +9,17 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using Dashboard.Viewer.Comunication;
 using DevExpress.LookAndFeel;
+using System.Configuration;
 
 namespace Dashboard.Viewer.WFA
 {
     public partial class FrmLogin : DevExpress.XtraEditors.XtraForm
     {
+        public string Modulo
+        {
+            get { return radioGroupModulo.EditValue.ToString(); }
+        }
+
         public FrmLogin()
         {
             InitializeComponent();
@@ -25,6 +31,11 @@ namespace Dashboard.Viewer.WFA
             this.Height = SystemInformation.WorkingArea.Height;
             this.Location = new Point(0, 0);
             this.BackColor = Conversao.SkinNameToColor(UserLookAndFeel.Default.SkinName);
+
+            bool exibeModulo = Convert.ToBoolean(ConfigurationManager.AppSettings["selecionaModulo"]);
+            labelControlModulo.Visible = exibeModulo;
+            radioGroupModulo.Visible = exibeModulo;
+            radioGroupModulo.EditValue = "V";
 
             pclLogin.Location = new Point((this.Width / 2) - (pclLogin.Width / 2), (this.Height / 2) - (pclLogin.Height / 2));
         }
