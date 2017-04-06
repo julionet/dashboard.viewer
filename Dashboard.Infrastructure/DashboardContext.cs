@@ -11,11 +11,11 @@ using System.Threading.Tasks;
 
 namespace Dashboard.Infrastructure
 {
-    public class DashboardViewerContext : DbContext
+    public class DashboardContext : DbContext
     {
-        public DashboardViewerContext() : base("DashboardViewerConnectionString")
+        public DashboardContext() : base("DashboardConnectionString")
         {
-            Database.SetInitializer<DashboardViewerContext>(new DashboardViewerInitializer());
+            Database.SetInitializer<DashboardContext>(new DashboardInitializer());
 
             Configuration.LazyLoadingEnabled = true;
             Configuration.ProxyCreationEnabled = false;

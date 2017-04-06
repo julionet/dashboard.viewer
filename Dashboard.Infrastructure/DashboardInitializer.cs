@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Dashboard.Infrastructure
 {
-    public class DashboardViewerInitializer : CreateDatabaseIfNotExists<DashboardViewerContext>
+    public class DashboardInitializer : CreateDatabaseIfNotExists<DashboardContext>
     {
-        protected override void Seed(DashboardViewerContext context)
+        protected override void Seed(DashboardContext context)
         {
             context.Usuarios.Add(new Usuario { Login = "admin", Senha = "856B1702E2F5628D58A5034273F2717388E33ECD", Master = true, Bloqueado = false });
             context.SaveChanges();

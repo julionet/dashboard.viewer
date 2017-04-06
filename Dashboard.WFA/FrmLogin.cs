@@ -58,5 +58,14 @@ namespace Dashboard.WFA
         {
             this.DialogResult = DialogResult.Cancel;
         }
+
+        private void lblConfiguracao_Click(object sender, EventArgs e)
+        {
+            using (FrmConfigBanco form = new FrmConfigBanco())
+            {
+                if (form.ShowDialog() == DialogResult.OK)
+                    Application.Exit();
+            }
+        }
     }
 }

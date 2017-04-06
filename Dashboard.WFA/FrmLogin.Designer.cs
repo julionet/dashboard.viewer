@@ -159,7 +159,7 @@
             this.radioGroupModulo.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem("V", "Viewer"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem("D", "Designer")});
-            this.radioGroupModulo.Size = new System.Drawing.Size(329, 23);
+            this.radioGroupModulo.Size = new System.Drawing.Size(329, 24);
             this.radioGroupModulo.TabIndex = 2;
             // 
             // labelControl3
@@ -184,6 +184,7 @@
             this.lblConfiguracao.Size = new System.Drawing.Size(174, 13);
             this.lblConfiguracao.TabIndex = 13;
             this.lblConfiguracao.Text = "Configuração do Banco de Dados";
+            this.lblConfiguracao.Click += new System.EventHandler(this.lblConfiguracao_Click);
             // 
             // btnIniciar
             // 

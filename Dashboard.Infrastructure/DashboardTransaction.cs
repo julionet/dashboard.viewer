@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 
 namespace Dashboard.Infrastructure
 {
-    public class DashboardViewerTransaction
+    public class DashboardTransaction
     {
-        private DashboardViewerTransaction()
+        private DashboardTransaction()
         {
 
         }
 
-        public static DbContextTransaction CreateDbContextTransaction(DashboardViewerContext db)
+        public static DbContextTransaction CreateDbContextTransaction(DashboardContext db)
         {
             if (db.Database.Connection is SqlConnection)
                 return db.Database.BeginTransaction(IsolationLevel.ReadUncommitted);

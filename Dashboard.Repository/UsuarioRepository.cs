@@ -10,13 +10,13 @@ namespace Dashboard.Repository
 {
     public class UsuarioRepository : IDisposable
     {
-        private DashboardViewerContext _db = new DashboardViewerContext();
+        private DashboardContext _db = new DashboardContext();
         private IRepository<Usuario> _repository;
         private string _usuario = "";
 
-        public UsuarioRepository(DashboardViewerContext context = null, string usuario = "")
+        public UsuarioRepository(DashboardContext context = null, string usuario = "")
         {
-            _repository = new Repository<Usuario>(context == null ? new DashboardViewerContext() : context);
+            _repository = new Repository<Usuario>(context == null ? new DashboardContext() : context);
             _usuario = usuario;
         }
 

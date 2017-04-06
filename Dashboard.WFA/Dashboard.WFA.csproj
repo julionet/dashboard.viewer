@@ -83,9 +83,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmConfigBanco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConfigBanco.designer.cs">
+      <DependentUpon>FrmConfigBanco.cs</DependentUpon>
+    </Compile>
     <Compile Include="Library\ButtonsPanel.cs" />
     <Compile Include="Library\Classe.cs" />
     <Compile Include="Library\ComponenteDX.cs" />
+    <Compile Include="Library\ConnectionString.cs" />
     <Compile Include="Library\Conversao.cs" />
     <Compile Include="FrmAlterarSenha.cs">
       <SubType>Form</SubType>
@@ -187,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCategoria.resx">
       <DependentUpon>FrmCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmConfigBanco.resx">
+      <DependentUpon>FrmConfigBanco.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDashboard.resx">
       <DependentUpon>FrmDashboard.cs</DependentUpon>

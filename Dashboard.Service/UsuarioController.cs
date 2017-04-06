@@ -16,8 +16,8 @@ namespace Dashboard.Service
 
         public string Salvar(Usuario entity)
         {
-            DashboardViewerContext _db = new DashboardViewerContext();
-            using (DbContextTransaction transacao = DashboardViewerTransaction.CreateDbContextTransaction(_db))
+            DashboardContext _db = new DashboardContext();
+            using (DbContextTransaction transacao = DashboardTransaction.CreateDbContextTransaction(_db))
             {
                 if (entity.Id == 0)
                     _mensagem = new UsuarioRepository(_db).Incluir(entity);
@@ -34,8 +34,8 @@ namespace Dashboard.Service
 
         public string Excluir(Usuario entity)
         {
-            DashboardViewerContext _db = new DashboardViewerContext();
-            using (DbContextTransaction transacao = DashboardViewerTransaction.CreateDbContextTransaction(_db))
+            DashboardContext _db = new DashboardContext();
+            using (DbContextTransaction transacao = DashboardTransaction.CreateDbContextTransaction(_db))
             {
                 _mensagem = new UsuarioRepository(_db).Excluir(entity);
                 if (_mensagem == "")

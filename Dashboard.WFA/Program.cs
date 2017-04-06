@@ -24,6 +24,18 @@ namespace Dashboard.WFA
             SkinManager.EnableFormSkins();
             UserLookAndFeel.Default.SetSkinStyle(ConfigurationManager.AppSettings["skinName"].ToString());
 
+            if ((ConfigurationManager.ConnectionStrings["DashboardConnectionString"] == null) ||
+                    ((ConfigurationManager.ConnectionStrings["DashboardConnectionString"] != null) &&
+                    (ConfigurationManager.ConnectionStrings["DashboardConnectionString"].ConnectionString == "")))
+            {
+                using (var form = new FrmConfigBanco())
+                {
+                    form.ShowDialog();
+                }
+                Application.Exit();
+                return;
+            }
+
             using (FrmLogin form = new FrmLogin())
             {
                 if (form.ShowDialog() == DialogResult.OK)
