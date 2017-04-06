@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipalViewer));
             this.tileNavPane = new DevExpress.XtraBars.Navigation.TileNavPane();
             this.navButtonTitulo = new DevExpress.XtraBars.Navigation.NavButton();
             this.navButtonTrocarUsuario = new DevExpress.XtraBars.Navigation.NavButton();
@@ -127,11 +128,11 @@
             // xtraTabControl
             // 
             this.xtraTabControl.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InActiveTabPageHeaderAndOnMouseHover;
-            this.xtraTabControl.HeaderButtons = ((DevExpress.XtraTab.TabButtons)((((DevExpress.XtraTab.TabButtons.Prev | DevExpress.XtraTab.TabButtons.Next)
-            | DevExpress.XtraTab.TabButtons.Close)
+            this.xtraTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.xtraTabControl.HeaderButtons = ((DevExpress.XtraTab.TabButtons)((((DevExpress.XtraTab.TabButtons.Prev | DevExpress.XtraTab.TabButtons.Next) 
+            | DevExpress.XtraTab.TabButtons.Close) 
             | DevExpress.XtraTab.TabButtons.Default)));
             this.xtraTabControl.HeaderButtonsShowMode = DevExpress.XtraTab.TabButtonShowMode.WhenNeeded;
-            this.xtraTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.xtraTabControl.Location = new System.Drawing.Point(204, 0);
             this.xtraTabControl.Name = "xtraTabControl";
             this.xtraTabControl.Size = new System.Drawing.Size(734, 512);
@@ -154,7 +155,7 @@
             this.navBarControl.Size = new System.Drawing.Size(204, 512);
             this.navBarControl.TabIndex = 1;
             // 
-            // FrmPrincipal
+            // FrmPrincipalViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -162,7 +163,8 @@
             this.Controls.Add(this.panelControlBackground);
             this.Controls.Add(this.tileNavPane);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmPrincipal";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "FrmPrincipalViewer";
             this.Text = "Dashboard Viewer";
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControlBackground)).EndInit();

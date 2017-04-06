@@ -31,6 +31,7 @@
             DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrinicpalDesigner));
             this.tileNavPane = new DevExpress.XtraBars.Navigation.TileNavPane();
             this.navButtonTitulo = new DevExpress.XtraBars.Navigation.NavButton();
             this.navButtonAlterarSenha = new DevExpress.XtraBars.Navigation.NavButton();
@@ -193,6 +194,7 @@
             this.Controls.Add(this.tileBar1);
             this.Controls.Add(this.tileNavPane);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmPrinicpalDesigner";
             this.Text = "Dashboard Designer";
             this.Load += new System.EventHandler(this.FrmPrinicpal_Load);
