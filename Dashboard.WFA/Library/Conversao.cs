@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Dashboard.WFA
 {
@@ -14,6 +15,43 @@ namespace Dashboard.WFA
         {
             byte[] byteArray = Encoding.GetEncoding("iso-8859-1").GetBytes(s);
             return new MemoryStream(byteArray);
+        }
+
+        public static string StreamToString(MemoryStream ms)
+        {
+            StreamReader reader = new StreamReader(ms);
+            return reader.ReadToEnd();
+        }
+
+        public static string KeyCodeToString(Keys key, bool shift)
+        {
+            if ((key == Keys.A) || (key == Keys.B) || (key == Keys.C) || (key == Keys.D) || (key == Keys.E) || (key == Keys.F) || (key == Keys.G) ||
+                (key == Keys.H) || (key == Keys.I) || (key == Keys.J) || (key == Keys.K) || (key == Keys.L) || (key == Keys.M) || (key == Keys.N) ||
+                (key == Keys.O) || (key == Keys.P) || (key == Keys.Q) || (key == Keys.R) || (key == Keys.S) || (key == Keys.T) || (key == Keys.U) ||
+                (key == Keys.V) || (key == Keys.X) || (key == Keys.Y) || (key == Keys.W) || (key == Keys.Z))
+                return shift ? key.ToString().ToUpper() : key.ToString().ToLower();
+            else if (key == Keys.D0 || key == Keys.NumPad0)
+                return shift ? ")" : "0";
+            else if (key == Keys.D1 || key == Keys.NumPad1)
+                return shift ? "!" : "1";
+            else if (key == Keys.D2 || key == Keys.NumPad2)
+                return shift ? "@" : "2";
+            else if (key == Keys.D3 || key == Keys.NumPad3)
+                return shift ? "#" : "3";
+            else if (key == Keys.D4 || key == Keys.NumPad4)
+                return shift ? "$" : "4";
+            else if (key == Keys.D5 || key == Keys.NumPad5)
+                return shift ? "%" : "5";
+            else if (key == Keys.D6 || key == Keys.NumPad6)
+                return shift ? "¨" : "6";
+            else if (key == Keys.D7 || key == Keys.NumPad7)
+                return shift ? "&" : "7";
+            else if (key == Keys.D8 || key == Keys.NumPad8)
+                return shift ? "*" : "8";
+            else if (key == Keys.D9 || key == Keys.NumPad9)
+                return shift ? "(" : "9";
+            else
+                return "";
         }
 
         public static Color SkinNameToColor(string s)

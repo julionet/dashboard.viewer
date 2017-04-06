@@ -40,7 +40,7 @@
             this.tileBarGroup2 = new DevExpress.XtraBars.Navigation.TileBarGroup();
             this.tileBarItemUsuarios = new DevExpress.XtraBars.Navigation.TileBarItem();
             this.tileBarItemCategorias = new DevExpress.XtraBars.Navigation.TileBarItem();
-            this.tileBarItemDesigner = new DevExpress.XtraBars.Navigation.TileBarItem();
+            this.tileBarItemDashboard = new DevExpress.XtraBars.Navigation.TileBarItem();
             this.xtraTabControl = new DevExpress.XtraTab.XtraTabControl();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl)).BeginInit();
             this.SuspendLayout();
@@ -122,7 +122,7 @@
             this.tileBar1.Groups.Add(this.tileBarGroup2);
             this.tileBar1.ItemSize = 56;
             this.tileBar1.Location = new System.Drawing.Point(0, 40);
-            this.tileBar1.MaxId = 3;
+            this.tileBar1.MaxId = 4;
             this.tileBar1.Name = "tileBar1";
             this.tileBar1.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.ScrollButtons;
             this.tileBar1.Size = new System.Drawing.Size(815, 98);
@@ -134,12 +134,13 @@
             // 
             this.tileBarGroup2.Items.Add(this.tileBarItemUsuarios);
             this.tileBarGroup2.Items.Add(this.tileBarItemCategorias);
-            this.tileBarGroup2.Items.Add(this.tileBarItemDesigner);
+            this.tileBarGroup2.Items.Add(this.tileBarItemDashboard);
             this.tileBarGroup2.Name = "tileBarGroup2";
             // 
             // tileBarItemUsuarios
             // 
             this.tileBarItemUsuarios.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
+            tileItemElement1.Image = global::Dashboard.WFA.Properties.Resources.users_icon_24;
             tileItemElement1.Text = "Usuários";
             this.tileBarItemUsuarios.Elements.Add(tileItemElement1);
             this.tileBarItemUsuarios.Id = 0;
@@ -150,6 +151,7 @@
             // tileBarItemCategorias
             // 
             this.tileBarItemCategorias.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
+            tileItemElement2.Image = global::Dashboard.WFA.Properties.Resources.categoria_icon_24;
             tileItemElement2.Text = "Categorias";
             this.tileBarItemCategorias.Elements.Add(tileItemElement2);
             this.tileBarItemCategorias.Id = 1;
@@ -157,15 +159,16 @@
             this.tileBarItemCategorias.Name = "tileBarItemCategorias";
             this.tileBarItemCategorias.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileBarItemCategorias_ItemClick);
             // 
-            // tileBarItemDesigner
+            // tileBarItemDashboard
             // 
-            this.tileBarItemDesigner.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
+            this.tileBarItemDashboard.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
+            tileItemElement3.Image = global::Dashboard.WFA.Properties.Resources.dashboard_icon_24;
             tileItemElement3.Text = "Dashboards";
-            this.tileBarItemDesigner.Elements.Add(tileItemElement3);
-            this.tileBarItemDesigner.Id = 2;
-            this.tileBarItemDesigner.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
-            this.tileBarItemDesigner.Name = "tileBarItemDesigner";
-            this.tileBarItemDesigner.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileBarItemDesigner_ItemClick);
+            this.tileBarItemDashboard.Elements.Add(tileItemElement3);
+            this.tileBarItemDashboard.Id = 2;
+            this.tileBarItemDashboard.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
+            this.tileBarItemDashboard.Name = "tileBarItemDashboard";
+            this.tileBarItemDashboard.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileBarItemDashboards_ItemClick);
             // 
             // xtraTabControl
             // 
@@ -208,7 +211,7 @@
         private DevExpress.XtraBars.Navigation.TileBarGroup tileBarGroup2;
         private DevExpress.XtraBars.Navigation.TileBarItem tileBarItemUsuarios;
         private DevExpress.XtraBars.Navigation.TileBarItem tileBarItemCategorias;
-        private DevExpress.XtraBars.Navigation.TileBarItem tileBarItemDesigner;
+        private DevExpress.XtraBars.Navigation.TileBarItem tileBarItemDashboard;
         private DevExpress.XtraTab.XtraTabControl xtraTabControl;
     }
 }

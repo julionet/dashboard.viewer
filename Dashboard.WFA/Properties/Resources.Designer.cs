@@ -63,9 +63,29 @@ namespace Dashboard.WFA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap categoria_icon_24 {
+            get {
+                object obj = ResourceManager.GetObject("categoria_icon_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dashboard_icon {
             get {
                 object obj = ResourceManager.GetObject("dashboard_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dashboard_icon_24 {
+            get {
+                object obj = ResourceManager.GetObject("dashboard_icon_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -126,6 +146,16 @@ namespace Dashboard.WFA.Properties {
         internal static System.Drawing.Bitmap TrocarUsuario_Metro_32 {
             get {
                 object obj = ResourceManager.GetObject("TrocarUsuario_Metro_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap users_icon_24 {
+            get {
+                object obj = ResourceManager.GetObject("users_icon_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

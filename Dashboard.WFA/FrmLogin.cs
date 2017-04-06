@@ -32,12 +32,14 @@ namespace Dashboard.WFA
             this.Location = new Point(0, 0);
             this.BackColor = Conversao.SkinNameToColor(UserLookAndFeel.Default.SkinName);
 
+            Interface.EnterMoveNextControl(panelContrologin);
+
             bool exibeModulo = Convert.ToBoolean(ConfigurationManager.AppSettings["selecionaModulo"]);
             labelControlModulo.Visible = exibeModulo;
             radioGroupModulo.Visible = exibeModulo;
             radioGroupModulo.EditValue = "V";
 
-            pclLogin.Location = new Point((this.Width / 2) - (pclLogin.Width / 2), (this.Height / 2) - (pclLogin.Height / 2));
+            panelContrologin.Location = new Point((this.Width / 2) - (panelContrologin.Width / 2), (this.Height / 2) - (panelContrologin.Height / 2));
         }
 
         private void btnIniciar_Click(object sender, EventArgs e)

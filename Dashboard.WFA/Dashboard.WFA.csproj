@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>dashboard-icon %281%29.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v15.1" />
     <Reference Include="DevExpress.Dashboard.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -81,6 +84,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Library\ButtonsPanel.cs" />
+    <Compile Include="Library\Classe.cs" />
     <Compile Include="Library\ComponenteDX.cs" />
     <Compile Include="Library\Conversao.cs" />
     <Compile Include="FrmAlterarSenha.cs">
@@ -149,11 +153,14 @@
     <Compile Include="FrmViewer.Designer.cs">
       <DependentUpon>FrmViewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Library\ConversionDX.cs" />
     <Compile Include="Library\Funcoes.cs" />
     <Compile Include="Library\GridViewWithButtons.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Library\Interface.cs" />
+    <Compile Include="Library\PopupContainerRegistroPesquisa.cs" />
+    <Compile Include="Library\RegistroPesquisa.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Library\Security.cs" />
@@ -162,6 +169,12 @@
     </Compile>
     <Compile Include="SplashScreen.designer.cs">
       <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucPesquisa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucPesquisa.designer.cs">
+      <DependentUpon>ucPesquisa.cs</DependentUpon>
     </Compile>
     <Compile Include="WaitForm.cs">
       <SubType>Form</SubType>
@@ -216,11 +229,15 @@
     <EmbeddedResource Include="SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucPesquisa.resx">
+      <DependentUpon>ucPesquisa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WaitForm.resx">
       <DependentUpon>WaitForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Dashboard.Dto.DashboardDto.datasource" />
     <None Include="Properties\DataSources\Dashboard.Viewer.Entity.Categoria.datasource" />
     <None Include="Properties\DataSources\Dashboard.Viewer.Entity.Usuario.datasource" />
     <None Include="Properties\Settings.settings">
@@ -271,6 +288,21 @@
       <Project>{d5f7ae72-ab4e-48cf-9b34-830af40cd759}</Project>
       <Name>Dashboard.Service</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users_icon_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users_icon_241.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dashboard_icon_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\categoria_icon_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="dashboard-icon %281%29.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

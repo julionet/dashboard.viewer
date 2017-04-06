@@ -71,7 +71,7 @@ namespace Dashboard.WFA
             CreateFormTabPage(xtraTabControl, new FrmCategoria());
         }
 
-        private void tileBarItemDesigner_ItemClick(object sender, TileItemEventArgs e)
+        private void tileBarItemDashboards_ItemClick(object sender, TileItemEventArgs e)
         {
             CreateFormTabPage(xtraTabControl, new FrmDashboard());
         }

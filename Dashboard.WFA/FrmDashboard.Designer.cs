@@ -32,9 +32,18 @@
             this.gvwPrincipal = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repSistema = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
             this.repCategoria = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
+            this.textEditDescricao = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.popupContainerEditCategoria = new DevExpress.XtraEditors.PopupContainerEdit();
+            this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
+            this.memoEditXml = new DevExpress.XtraEditors.MemoEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.simpleButtonDesigner = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.pclAcesso)).BeginInit();
             this.pclAcesso.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pclAcessoBottom)).BeginInit();
@@ -50,6 +59,7 @@
             this.pclBotoesManutencao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pclPesquisar)).BeginInit();
             this.pclPesquisar.SuspendLayout();
+            this.xscManutencao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pclSeparadorAcesso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pclBotoesAcesso)).BeginInit();
             this.pclBotoesAcesso.SuspendLayout();
@@ -57,6 +67,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvwPrincipal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repSistema)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repCategoria)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditDescricao.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupContainerEditCategoria.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memoEditXml.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // pclAcesso
@@ -65,8 +79,42 @@
             this.pclAcesso.Appearance.Options.UseBackColor = true;
             this.pclAcesso.Controls.Add(this.gclPrincipal);
             // 
+            // xtpManutencao
+            // 
+            this.xtpManutencao.Size = new System.Drawing.Size(760, 299);
+            // 
+            // pclManutencao
+            // 
+            this.pclManutencao.Size = new System.Drawing.Size(760, 263);
+            // 
             // txtPesquisa
             // 
+            // 
+            // principalBindingSource
+            // 
+            this.principalBindingSource.DataSource = typeof(Dashboard.Dto.DashboardDto);
+            // 
+            // xtcPaginas
+            // 
+            this.xtcPaginas.SelectedTabPage = this.xtpManutencao;
+            this.xtcPaginas.Size = new System.Drawing.Size(760, 299);
+            // 
+            // pclBotoesManutencao
+            // 
+            this.pclBotoesManutencao.Location = new System.Drawing.Point(0, 267);
+            this.pclBotoesManutencao.Size = new System.Drawing.Size(760, 32);
+            // 
+            // xscManutencao
+            // 
+            this.xscManutencao.Controls.Add(this.simpleButtonDesigner);
+            this.xscManutencao.Controls.Add(this.labelControl3);
+            this.xscManutencao.Controls.Add(this.memoEditXml);
+            this.xscManutencao.Controls.Add(this.checkEdit1);
+            this.xscManutencao.Controls.Add(this.popupContainerEditCategoria);
+            this.xscManutencao.Controls.Add(this.labelControl2);
+            this.xscManutencao.Controls.Add(this.textEditDescricao);
+            this.xscManutencao.Controls.Add(this.labelControl1);
+            this.xscManutencao.Size = new System.Drawing.Size(756, 259);
             // 
             // pclSeparadorAcesso
             // 
@@ -94,6 +142,7 @@
             this.gvwPrincipal.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
             this.gridColumn2,
+            this.gridColumn4,
             this.gridColumn3});
             this.gvwPrincipal.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gvwPrincipal.GridControl = this.gclPrincipal;
@@ -112,6 +161,7 @@
             this.gvwPrincipal.OptionsView.ShowIndicator = false;
             this.gvwPrincipal.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn2, DevExpress.Data.ColumnSortOrder.Ascending)});
+            this.gvwPrincipal.DoubleClick += new System.EventHandler(this.gvwAcesso_DoubleClick);
             // 
             // gridColumn1
             // 
@@ -129,7 +179,16 @@
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 0;
-            this.gridColumn2.Width = 450;
+            this.gridColumn2.Width = 400;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Categoria";
+            this.gridColumn4.FieldName = "CategoriaDescricao";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 1;
+            this.gridColumn4.Width = 300;
             // 
             // gridColumn3
             // 
@@ -140,7 +199,7 @@
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 1;
+            this.gridColumn3.VisibleIndex = 2;
             this.gridColumn3.Width = 70;
             // 
             // repSistema
@@ -167,13 +226,90 @@
             new DevExpress.XtraEditors.Controls.ImageComboBoxItem("Outras", "O", -1)});
             this.repCategoria.Name = "repCategoria";
             // 
+            // textEditDescricao
+            // 
+            this.textEditDescricao.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.principalBindingSource, "Descricao", true));
+            this.textEditDescricao.Location = new System.Drawing.Point(84, 27);
+            this.textEditDescricao.Name = "textEditDescricao";
+            this.textEditDescricao.Properties.MaxLength = 80;
+            this.textEditDescricao.Size = new System.Drawing.Size(416, 20);
+            this.textEditDescricao.TabIndex = 3;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(32, 30);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(46, 13);
+            this.labelControl1.TabIndex = 2;
+            this.labelControl1.Text = "Descrição";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Location = new System.Drawing.Point(31, 56);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(47, 13);
+            this.labelControl2.TabIndex = 4;
+            this.labelControl2.Text = "Categoria";
+            // 
+            // popupContainerEditCategoria
+            // 
+            this.popupContainerEditCategoria.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.principalBindingSource, "CategoriaDescricao", true));
+            this.popupContainerEditCategoria.Location = new System.Drawing.Point(84, 53);
+            this.popupContainerEditCategoria.Name = "popupContainerEditCategoria";
+            this.popupContainerEditCategoria.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.popupContainerEditCategoria.Size = new System.Drawing.Size(416, 20);
+            this.popupContainerEditCategoria.TabIndex = 5;
+            this.popupContainerEditCategoria.QueryResultValue += new DevExpress.XtraEditors.Controls.QueryResultValueEventHandler(this.popupContainerEditCategoria_QueryResultValue);
+            this.popupContainerEditCategoria.QueryPopUp += new System.ComponentModel.CancelEventHandler(this.popupContainerEditCategoria_QueryPopUp);
+            this.popupContainerEditCategoria.KeyDown += new System.Windows.Forms.KeyEventHandler(this.popupContainerEditCategoria_KeyDown);
+            // 
+            // checkEdit1
+            // 
+            this.checkEdit1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.principalBindingSource, "Ativo", true));
+            this.checkEdit1.Location = new System.Drawing.Point(519, 54);
+            this.checkEdit1.Name = "checkEdit1";
+            this.checkEdit1.Properties.Caption = "Ativo?";
+            this.checkEdit1.Size = new System.Drawing.Size(75, 19);
+            this.checkEdit1.TabIndex = 6;
+            // 
+            // memoEditXml
+            // 
+            this.memoEditXml.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.memoEditXml.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.principalBindingSource, "Xml", true));
+            this.memoEditXml.Location = new System.Drawing.Point(84, 79);
+            this.memoEditXml.Name = "memoEditXml";
+            this.memoEditXml.Properties.ReadOnly = true;
+            this.memoEditXml.Size = new System.Drawing.Size(629, 136);
+            this.memoEditXml.TabIndex = 7;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(62, 81);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(16, 13);
+            this.labelControl3.TabIndex = 8;
+            this.labelControl3.Text = "Xml";
+            // 
+            // simpleButtonDesigner
+            // 
+            this.simpleButtonDesigner.Location = new System.Drawing.Point(84, 221);
+            this.simpleButtonDesigner.Name = "simpleButtonDesigner";
+            this.simpleButtonDesigner.Size = new System.Drawing.Size(70, 23);
+            this.simpleButtonDesigner.TabIndex = 11;
+            this.simpleButtonDesigner.Text = "&Designer";
+            this.simpleButtonDesigner.Click += new System.EventHandler(this.simpleButtonDesigner_Click);
+            // 
             // FrmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(559, 296);
+            this.ClientSize = new System.Drawing.Size(772, 311);
+            this.FirstControl = this.textEditDescricao;
             this.Name = "FrmDashboard";
-            this.Text = "FrmDashboard";
+            this.Text = "Dashboards";
+            this.Load += new System.EventHandler(this.FrmDashboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pclAcesso)).EndInit();
             this.pclAcesso.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pclAcessoBottom)).EndInit();
@@ -190,6 +326,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pclPesquisar)).EndInit();
             this.pclPesquisar.ResumeLayout(false);
             this.pclPesquisar.PerformLayout();
+            this.xscManutencao.ResumeLayout(false);
+            this.xscManutencao.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pclSeparadorAcesso)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pclBotoesAcesso)).EndInit();
             this.pclBotoesAcesso.ResumeLayout(false);
@@ -197,6 +335,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvwPrincipal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repSistema)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repCategoria)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditDescricao.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupContainerEditCategoria.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memoEditXml.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -210,5 +352,14 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox repSistema;
         private DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox repCategoria;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraEditors.TextEdit textEditDescricao;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.CheckEdit checkEdit1;
+        private DevExpress.XtraEditors.PopupContainerEdit popupContainerEditCategoria;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.MemoEdit memoEditXml;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonDesigner;
     }
 }
