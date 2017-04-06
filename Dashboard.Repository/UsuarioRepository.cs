@@ -39,10 +39,10 @@ namespace Dashboard.Repository
             string mensagem = this.ValidarDados(entity);
             if (mensagem == "")
             {
-                mensagem = _repository.JoinEntity<Entity.Dashboard>(entity.Dashboard, entity.ListaDashboard);
+                mensagem = _repository.Insert(entity);
 
                 if (mensagem == "")
-                    mensagem = _repository.Insert(entity);
+                    mensagem = _repository.JoinEntity<Entity.Dashboard>(entity.Dashboard, entity.ListaDashboard);
             }
             return mensagem;
         }
@@ -52,10 +52,10 @@ namespace Dashboard.Repository
             string mensagem = this.ValidarDados(entity);
             if (mensagem == "")
             {
-                mensagem = _repository.JoinEntity<Entity.Dashboard>(entity.Dashboard, entity.ListaDashboard);
+                mensagem = _repository.Update(entity);
 
                 if (mensagem == "")
-                    mensagem = _repository.Update(entity);
+                    mensagem = _repository.JoinEntity<Entity.Dashboard>(entity.Dashboard, entity.ListaDashboard);
             }
             return mensagem;
         }

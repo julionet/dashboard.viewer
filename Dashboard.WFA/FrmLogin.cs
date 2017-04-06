@@ -10,6 +10,7 @@ using DevExpress.XtraEditors;
 using Dashboard.Comunication;
 using DevExpress.LookAndFeel;
 using System.Configuration;
+using Dashboard.Entity;
 
 namespace Dashboard.WFA
 {
@@ -20,9 +21,15 @@ namespace Dashboard.WFA
             get { return radioGroupModulo.EditValue.ToString(); }
         }
 
-        public FrmLogin()
+        public FrmLogin(bool trocarusuario = false)
         {
             InitializeComponent();
+
+            bool exibeModulo = Convert.ToBoolean(ConfigurationManager.AppSettings["selecionaModulo"]) && !trocarusuario;
+            labelControlModulo.Visible = exibeModulo;
+            radioGroupModulo.Visible = exibeModulo;
+            radioGroupModulo.EditValue = "V";
+
         }
 
         private void FrmLogin_Load(object sender, EventArgs e)
@@ -34,11 +41,6 @@ namespace Dashboard.WFA
 
             Interface.EnterMoveNextControl(panelContrologin);
 
-            bool exibeModulo = Convert.ToBoolean(ConfigurationManager.AppSettings["selecionaModulo"]);
-            labelControlModulo.Visible = exibeModulo;
-            radioGroupModulo.Visible = exibeModulo;
-            radioGroupModulo.EditValue = "V";
-
             panelContrologin.Location = new Point((this.Width / 2) - (panelContrologin.Width / 2), (this.Height / 2) - (panelContrologin.Height / 2));
         }
 
@@ -49,8 +51,14 @@ namespace Dashboard.WFA
                 XtraMessageBox.Show(mensagem, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
-                Global.UsuarioLogin = txtUsuario.Text;
-                this.DialogResult = DialogResult.OK;
+                Usuario usuario = Servicos.usuarioServico.SelecionarLogin(txtUsuario.Text);
+                if (!usuario.Master && radioGroupModulo.EditValue.ToString().Equals("D"))
+                    XtraMessageBox.Show("Usuário não tem acesso ao dashboard designer!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else
+                {
+                    Global.UsuarioLogin = txtUsuario.Text;
+                    this.DialogResult = DialogResult.OK;
+                }
             }
         }
 

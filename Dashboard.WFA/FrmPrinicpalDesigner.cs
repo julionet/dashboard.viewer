@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraEditors;
 using DevExpress.XtraTab;
+using DevExpress.XtraTab.ViewInfo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -109,6 +110,11 @@ namespace Dashboard.WFA
                 paginas.TabPages.Add(newPag);
                 paginas.SelectedTabPage = newPag;
             }
+        }
+
+        private void xtraTabControl_CloseButtonClick(object sender, EventArgs e)
+        {
+            (sender as XtraTabControl).TabPages.Remove(((e as ClosePageButtonEventArgs).Page as XtraTabPage));
         }
     }
 }

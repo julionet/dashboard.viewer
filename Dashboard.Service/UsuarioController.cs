@@ -61,6 +61,11 @@ namespace Dashboard.Service
             return new UsuarioRepository().Filtrar(condicao).ToList();
         }
 
+        public Usuario SelecionarLogin(string login)
+        {
+            return new UsuarioRepository().SelecionarPorLogin(login);
+        }
+
         public string ValidarLogin(string login, string senha)
         {
             return new UsuarioRepository().ValidarLogin(login, senha);

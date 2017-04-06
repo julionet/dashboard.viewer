@@ -13,7 +13,7 @@ namespace Dashboard.WFA
     {
         public static System.IO.MemoryStream StringToStream(string s)
         {
-            byte[] byteArray = Encoding.GetEncoding("iso-8859-1").GetBytes(s);
+            byte[] byteArray = Encoding.UTF8.GetBytes(s);
             return new MemoryStream(byteArray);
         }
 

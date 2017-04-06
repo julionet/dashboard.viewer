@@ -182,6 +182,7 @@
             this.xtraTabControl.Name = "xtraTabControl";
             this.xtraTabControl.Size = new System.Drawing.Size(815, 392);
             this.xtraTabControl.TabIndex = 4;
+            this.xtraTabControl.CloseButtonClick += new System.EventHandler(this.xtraTabControl_CloseButtonClick);
             // 
             // FrmPrinicpalDesigner
             // 

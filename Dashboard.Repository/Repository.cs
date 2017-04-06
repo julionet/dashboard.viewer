@@ -67,7 +67,7 @@ namespace Dashboard.Repository
 
         public string JoinEntity<TEntity>(ICollection<TEntity> list, string s)
         {
-            if (list != null) 
+            if (list != null)
             {
                 DbSet.Include(typeof(TEntity).Name).Load();
                 while (list.Count() != 0)

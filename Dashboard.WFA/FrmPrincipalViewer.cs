@@ -41,6 +41,9 @@ namespace Dashboard.WFA
                     });
                     tileBarItem.ItemClick += (sender, e) =>
                     {
+                        navBarControl.OptionsNavPane.NavPaneState = NavPaneState.Collapsed;
+                        navBarControl.HideNavPaneForm();
+
                         bool bAchou = false;
                         XtraTabPage newPage;
                         foreach (XtraTabPage pagina in xtraTabControl.TabPages)
@@ -59,8 +62,10 @@ namespace Dashboard.WFA
 
                             FrmViewer formViewer = new FrmViewer(dashboard.Id);
                             formViewer.TopLevel = false;
-                            formViewer.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                            formViewer.FormBorderStyle = FormBorderStyle.None;
+                            formViewer.Location = new Point(0, 0);
                             formViewer.Size = new Size(xtraTabControl.Size.Width, xtraTabControl.Size.Height - 24);
+
                             formViewer.ParentControl = xtraTabControl;
                             formViewer.ParentPage = newPage;
                             newPage.Controls.Add(formViewer);
@@ -69,8 +74,6 @@ namespace Dashboard.WFA
                             xtraTabControl.TabPages.Add(newPage);
                             xtraTabControl.SelectedTabPage = newPage;
                         }
-                        navBarControl.OptionsNavPane.NavPaneState = NavPaneState.Collapsed;
-                        navBarControl.HideNavPaneForm();
                     };
                     tileBarGroup.Items.Add(tileBarItem);
                 }
@@ -129,7 +132,7 @@ namespace Dashboard.WFA
         private void navButtonTrocarUsuario_ElementClick(object sender, NavElementEventArgs e)
         {
             _forcarsaida = true;
-            if (new FrmLogin().ShowDialog() == DialogResult.OK)
+            if (new FrmLogin(true).ShowDialog() == DialogResult.OK)
             {
                 navBarControl.Groups.Clear();
                 xtraTabControl.TabPages.Clear();
