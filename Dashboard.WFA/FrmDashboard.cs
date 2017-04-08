@@ -122,12 +122,6 @@ namespace Dashboard.WFA
             }
         }
 
-        private void FrmDashboard_Load(object sender, EventArgs e)
-        {
-            memoEditXml.Height = this.Height - 215;
-            simpleButtonDesigner.Top = memoEditXml.Top + memoEditXml.Height + 8;
-        }
-
         private void simpleButtonDesigner_Click(object sender, EventArgs e)
         {
             using (FrmDesigner form = new FrmDesigner((principalBindingSource.Current as DashboardDto).Xml))

@@ -26,7 +26,8 @@ namespace Dashboard.WFA
 
         private void FrmModelo_Load(object sender, EventArgs e)
         {
-            //Interface.SetPropertyDefault(panBackground);
+            Interface.SetPropertyDefault(panBackground);
+            Interface.EnterMoveNextControl(panBackground);
         }
 
         private void FrmModelo_KeyDown(object sender, KeyEventArgs e)
