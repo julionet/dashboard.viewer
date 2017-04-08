@@ -483,6 +483,7 @@
             // 
             this.dashboardDesigner.ActionOnClose = DevExpress.DashboardWin.DashboardActionOnClose.Discard;
             this.dashboardDesigner.AllowEditComponentName = true;
+            this.dashboardDesigner.DataSourceWizardSettings.EnableCustomSql = true;
             this.dashboardDesigner.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dashboardDesigner.Location = new System.Drawing.Point(0, 166);
             this.dashboardDesigner.MenuManager = this.ribbonControl1;
