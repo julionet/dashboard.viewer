@@ -173,7 +173,7 @@
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(329, 22);
             this.labelControl3.TabIndex = 14;
-            this.labelControl3.Text = "Dashboards";
+            this.labelControl3.Text = "Dashboards.NET";
             // 
             // lblConfiguracao
             // 
@@ -266,7 +266,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmLogin";
             this.Padding = new System.Windows.Forms.Padding(4);
-            this.Text = "Dashboards";
+            this.Text = "Dashboards.NET";
             this.Load += new System.EventHandler(this.FrmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);

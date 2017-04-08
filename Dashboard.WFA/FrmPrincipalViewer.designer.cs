@@ -165,7 +165,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmPrincipalViewer";
-            this.Text = "Dashboard Viewer";
+            this.Text = "Dashboards.NET";
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControlBackground)).EndInit();
             this.panelControlBackground.ResumeLayout(false);

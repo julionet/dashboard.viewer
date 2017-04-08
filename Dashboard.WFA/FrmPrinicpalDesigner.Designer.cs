@@ -196,7 +196,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmPrinicpalDesigner";
-            this.Text = "Dashboard Designer";
+            this.Text = "Dashboards.NET";
             this.Load += new System.EventHandler(this.FrmPrinicpal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl)).EndInit();
             this.ResumeLayout(false);
